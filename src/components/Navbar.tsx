@@ -30,7 +30,7 @@ export default function Navbar({ onNavigate, activeSection, onOpenResume, isProj
     { label: 'Experience', id: 'experience' },
     { label: 'Certifications', id: 'certifications' },
     { label: 'Achievements', id: 'achievements' },
-    { label: 'Contact', id: 'contact' },
+    { label: ' Reach Out     ', id: 'contact' },
   ];
 
   const handleLinkClick = (id: string) => {

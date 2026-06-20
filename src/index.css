@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&family=Pacifico&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&family=Pacifico&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -7,6 +7,8 @@
   --font-hero-display: "Syne", "Outfit", sans-serif;
   --font-cursive: "Pacifico", cursive;
   --font-mono: "JetBrains Mono", monospace;
+  --font-remaining: "Inter", sans-serif;
+  --font-remaining-display: "Inter", sans-serif;
   
   --color-brand-primary: #8b5cf6; /* Vibrant violet */
   --color-brand-secondary: #06b6d4; /* Teal */
@@ -120,3 +122,96 @@
 .terminal-gradient {
   background: linear-gradient(145deg, #1e293b, #0f172a);
 }
+
+/* Custom class to force Google Fonts Inter on remaining sections */
+.font-remaining {
+  font-family: "Inter", sans-serif;
+}
+
+.font-remaining h1,
+.font-remaining h2,
+.font-remaining h3,
+.font-remaining h4,
+.font-remaining h5,
+.font-remaining h6,
+.font-remaining .font-display,
+.font-remaining [class*="font-display"] {
+  font-family: "Inter", sans-serif !important;
+}
+
+.font-remaining p,
+.font-remaining span,
+.font-remaining button,
+.font-remaining input,
+.font-remaining textarea,
+.font-remaining select,
+.font-remaining a,
+.font-remaining li,
+.font-remaining label,
+.font-remaining div:not(.font-mono):not(.font-cursive):not(.font-hero-display) {
+  font-family: "Inter", sans-serif;
+}
+
+/* Ensure monospaced fonts and cursive layouts are correctly preserved */
+.font-remaining .font-mono,
+.font-remaining .font-mono *,
+.font-remaining [class*="font-mono"],
+.font-remaining pre,
+.font-remaining code {
+  font-family: "JetBrains Mono", monospace !important;
+}
+
+.font-remaining .font-cursive,
+.font-remaining .font-cursive *,
+.font-remaining [class*="font-cursive"] {
+  font-family: "Pacifico", cursive !important;
+}
+
+.font-remaining .font-hero-display,
+.font-remaining .font-hero-display *,
+.font-remaining [class*="font-hero-display"] {
+  font-family: "Syne", sans-serif !important;
+}
+
+/* Print Optimization for high-fidelity resume export */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  /* Hide every single element in the viewport */
+  body > *:not(#resume-print-container) {
+    display: none !important;
+  }
+  
+  /* Hide navs, modals backdrop, footers, etc */
+  header, nav, footer, #btn-contact-submit, button, .modal-controls, .no-print {
+    display: none !important;
+  }
+  
+  /* Reset standard print margins and force full viewport positioning */
+  @page {
+    size: A4 portrait;
+    margin: 1.5cm;
+  }
+  
+  /* Expose and format the print container completely */
+  #resume-print-container {
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    color: #000000 !important;
+  }
+
+  .resume-section-line {
+    border-bottom: 0.5px solid #000000 !important;
+  }
+}
+
+

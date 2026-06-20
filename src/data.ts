@@ -23,55 +23,59 @@ export const SKILLS_DATA: SkillCategory[] = [
     title: 'Languages',
     iconName: 'Code',
     skills: [
-      { name: 'Python', level: 92, details: 'Core scripting, OOP, advanced analysis' },
-      { name: 'MySQL', level: 85, details: 'Relational queries, database designs, indexing' }
+      { name: 'Python', level: 95, details: 'Core scripting, advanced data structures, OOP' },
+      { name: 'MySQL', level: 85, details: 'Relational queries, indexing, joins, database design' }
     ]
   },
   {
     title: 'Machine Learning',
     iconName: 'Cpu',
     skills: [
-      { name: 'Regression Models', level: 88, details: 'Linear, Ridge, Lasso, Polynomial' },
-      { name: 'Classification Algorithms', level: 86, details: 'Random Forests, SVM, XGBoost, Naive Bayes' },
-      { name: 'Clustering & Unsupervised', level: 82, details: 'K-Means, Hierarchical, PCA dimensionality reduction' },
-      { name: 'Model Evaluation', level: 90, details: 'ROC-AUC, Precision-Recall, Cross-Validation' }
+      { name: 'Regression', level: 90, details: 'Linear, Ridge, Lasso, Polynomial modeling' },
+      { name: 'Classification', level: 90, details: 'Random Forests, SVM, XGBoost, Decision Trees' },
+      { name: 'Clustering', level: 80, details: 'K-Means, Hierarchical clustering, PCA, DBSCAN' },
+      { name: 'Model Evaluation', level: 85, details: 'ROC-AUC, Precision-Recall, Cross-Validation' }
     ]
   },
   {
     title: 'Deep Learning',
     iconName: 'Layers',
     skills: [
-      { name: 'Neural Networks', level: 78, details: 'Multi-layer Perceptrons, Backpropagation' },
-      { name: 'CNN (Convolutional)', level: 80, details: 'Image classification, feature map visualization' },
-      { name: 'RNN & LSTMs', level: 75, details: 'Sequential analysis, time-series forecasting' }
+      { name: 'Neural Networks', level: 90, details: 'Multi-layer Perceptrons, Backpropagation, Optimizers' },
+      { name: 'CNN (Convolutional Neural Networks)', level: 85, details: 'Computer vision, image features' },
+      { name: 'RNN (Recurrent Neural Networks)', level: 80, details: 'Sequential analysis, time-series forecasting' }
     ]
   },
   {
     title: 'Generative AI',
     iconName: 'Sparkles',
     skills: [
-      { name: 'Large Language Models', level: 85, details: 'Mistral, Llama, Hugging Face Hub APIs' },
-      { name: 'Fine-Tuning (PEFT/LoRA)', level: 80, details: 'QLoRA, parameter optimization, dataset alignment' },
-      { name: 'Prompt Engineering', level: 90, details: 'Zero-shot, Few-shot, Chain-of-Thought prompting' },
-      { name: 'RAG Architecture', level: 84, details: 'Document chunking, vector stores, dense retrieval' }
+      { name: 'Large Language Models (LLMs)', level: 90, details: 'Mistral, Llama, Hugging Face Hub APIs' },
+      { name: 'Prompt Engineering', level: 85, details: 'Few-shot, Chain-of-Thought prompting' }
     ]
   },
   {
     title: 'Data Analysis',
     iconName: 'BarChart2',
     skills: [
-      { name: 'Exploratory Data Analysis (EDA)', level: 94, details: 'Distribution profiling, anomaly flagging' },
-      { name: 'Data Preprocessing', level: 90, details: 'Imputation, scale normalizations, feature engineering' },
-      { name: 'Data Validation', level: 88, details: 'Integrity constraints, format rules, MX testing' }
+      { name: 'EDA (Exploratory Data Analysis)', level: 90, details: 'Distribution profiling, correlation mapping' },
+      { name: 'Data Cleaning', level: 90, details: 'Handling missing values, outlier treatment' },
+      { name: 'Preprocessing', level: 90, details: 'Scikit-Learn pipelines, encoders, scalers' },
+      { name: 'Data Validation', level: 85, details: 'Data-type integrity constraints, quality checks' }
     ]
   },
   {
     title: 'Libraries & Tools',
     iconName: 'Wrench',
     skills: [
-      { name: 'Core Libraries', level: 92, details: 'NumPy, Pandas, Scikit-learn' },
-      { name: 'Data Visualization', level: 88, details: 'Matplotlib, Seaborn, Plotly' },
-      { name: 'Frameworks & IDEs', level: 85, details: 'Streamlit, Flask, Jupyter Notebook, Colab' }
+      { name: 'Numpy', level: 92, details: 'Multidimensional array computing, vectorization' },
+      { name: 'Pandas', level: 94, details: 'Dataframe manipulation, grouping, aggregations' },
+      { name: 'Scikit-learn', level: 90, details: 'Supervised and unsupervised models' },
+      { name: 'Matplotlib', level: 88, details: 'Static plotting, custom figures & subplots' },
+      { name: 'Seaborn', level: 88, details: 'Statistical database visualization grids' },
+      { name: 'Streamlit', level: 90, details: 'Building rapid data & AI interactive interfaces' },
+      { name: 'Google Colab', level: 92, details: 'GPU/TPU-backed cloud notebook development' },
+      { name: 'Jupyter Notebook', level: 95, details: 'Modular scientific computing, rapid documentation' }
     ]
   }
 ];
