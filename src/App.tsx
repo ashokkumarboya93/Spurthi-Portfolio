@@ -31,7 +31,8 @@ import {
   Database,
   Eye,
   Activity,
-  Heart
+  Heart,
+  GraduationCap
 } from 'lucide-react';
 import { PERSONAL_INFO, SKILLS_DATA, PROJECTS_DATA, EXPERIENCE_DATA, CERTIFICATIONS_DATA, ACHIEVEMENTS_DATA } from './data';
 import { Project } from './types';
@@ -203,7 +204,7 @@ export default function App() {
   useEffect(() => {
     if (selectedProject) return;
 
-    const sections = ['home', 'skills', 'projects', 'experience', 'certifications', 'achievements', 'contact'];
+    const sections = ['home', 'about', 'skills', 'projects', 'experience', 'certifications', 'achievements', 'contact'];
     
     const handleScroll = () => {
       const scrollPos = window.scrollY + 200;
@@ -683,6 +684,254 @@ export default function App() {
 
                 </div>
 
+              </div>
+            </motion.section>
+
+            {/* NEW ABOUT ME SECTION - Replicating the uploaded design perfectly without needing a complex profile image */}
+            <motion.section
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-120px" }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              id="about"
+              className="py-20 bg-white dark:bg-[#090816] relative z-10 border-t border-gray-150 dark:border-purple-950/25 transition-colors duration-300 overflow-hidden"
+            >
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                {/* Background subtle textures */}
+                <div className="absolute top-10 right-10 w-96 h-96 rounded-full bg-purple-200/5 dark:bg-purple-900/5 blur-3xl pointer-events-none" />
+                <div className="absolute bottom-10 left-10 w-96 h-96 rounded-full bg-blue-200/5 dark:bg-blue-900/5 blur-3xl pointer-events-none" />
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                  {/* Left Column - Main Intro & Details (Takes 6 cols) */}
+                  <div className="lg:col-span-6 space-y-6">
+                    <div className="space-y-2">
+                      <span className="text-xs font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 uppercase font-mono">
+                        ABOUT ME
+                      </span>
+                      <h2 className="text-4xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
+                        About <span className="bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 bg-clip-text text-transparent">Me</span>
+                      </h2>
+                    </div>
+
+                    <div className="space-y-4">
+                      <p className="text-lg font-medium text-slate-800 dark:text-slate-200 leading-relaxed font-sans border-l-4 border-indigo-500 pl-4 py-1">
+                        Turning Data into Intelligent Solutions through Machine Learning, Artificial Intelligence and Data Analytics.
+                      </p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-normal">
+                        Aspiring Data Scientist with hands-on experience in Machine Learning and Generative AI. Passionate about transforming complex data into meaningful insights and building intelligent AI-driven solutions. Skilled in Python, SQL, Data Analysis, Predictive Modeling, and modern AI technologies with a strong focus on solving real-world problems.
+                      </p>
+                    </div>
+
+                    {/* Quick Stats Grid inside left column */}
+                    <div className="pt-6 border-t border-gray-100 dark:border-purple-950/20 space-y-4">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        {/* Stat 1 */}
+                        <motion.div 
+                          whileHover={{ y: -3 }}
+                          className="bg-gray-50/50 dark:bg-slate-900/45 p-4 rounded-2xl border border-gray-150/65 dark:border-purple-950/20 flex flex-col items-center text-center group transition-all"
+                        >
+                          <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-500 flex items-center justify-center mb-3 group-hover:bg-blue-105 transition-colors">
+                            <Cpu className="w-5 h-5" />
+                          </div>
+                          <span className="text-[10px] uppercase tracking-wider text-slate-400 font-bold font-mono">Current Role</span>
+                          <span className="text-[12px] font-extrabold text-slate-800 dark:text-slate-200 mt-1 whitespace-nowrap">Data Science Intern</span>
+                        </motion.div>
+
+                        {/* Stat 2 */}
+                        <motion.div 
+                          whileHover={{ y: -3 }}
+                          className="bg-gray-50/50 dark:bg-slate-900/45 p-4 rounded-2xl border border-gray-150/65 dark:border-purple-950/20 flex flex-col items-center text-center group transition-all"
+                        >
+                          <div className="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-900/20 text-purple-500 flex items-center justify-center mb-3 group-hover:bg-purple-105 transition-colors">
+                            <Database className="w-5 h-5" />
+                          </div>
+                          <span className="text-[10px] uppercase tracking-wider text-slate-400 font-bold font-mono">Data Processed</span>
+                          <span className="text-[13px] font-extrabold text-slate-800 dark:text-slate-200 mt-1">11,000+ Records</span>
+                        </motion.div>
+
+                        {/* Stat 3 */}
+                        <motion.div 
+                          whileHover={{ y: -3 }}
+                          className="bg-gray-50/50 dark:bg-slate-900/45 p-4 rounded-2xl border border-gray-150/65 dark:border-purple-950/20 flex flex-col items-center text-center group transition-all"
+                        >
+                          <div className="w-10 h-10 rounded-xl bg-pink-50 dark:bg-pink-900/20 text-pink-500 flex items-center justify-center mb-3 group-hover:bg-pink-105 transition-colors">
+                            <Sparkles className="w-5 h-5" />
+                          </div>
+                          <span className="text-[10px] uppercase tracking-wider text-slate-400 font-bold font-mono">AI Systems</span>
+                          <span className="text-[13px] font-extrabold text-slate-800 dark:text-slate-200 mt-1">2+ Completed</span>
+                        </motion.div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column - Education Subsection (Takes 6 cols) */}
+                  <div className="lg:col-span-6 space-y-6">
+                    <div className="flex items-center gap-3 pb-2 border-b border-gray-100 dark:border-purple-950/20">
+                      <div className="w-8 h-8 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-500 flex items-center justify-center shrink-0 shadow-xs">
+                        <GraduationCap className="w-4.5 h-4.5" />
+                      </div>
+                      <h3 className="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                        Education
+                      </h3>
+                    </div>
+
+                    <div className="space-y-4">
+                      {/* BTech Card */}
+                      <motion.div 
+                        whileHover={{ x: 4, scale: 1.01 }}
+                        className="bg-blue-50/40 dark:bg-blue-950/5 rounded-2xl border border-blue-100/50 dark:border-blue-900/10 p-5 relative overflow-hidden group transition-all shadow-sm"
+                      >
+                        {/* Decorative background school elements */}
+                        <div className="absolute right-[-20px] bottom-[-20px] w-32 h-32 opacity-5 dark:opacity-[0.02] text-blue-500 pointer-events-none">
+                          <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                            <path d="M12 3a1 1 0 00-1 1v.062L3.22 7.281a1 1 0 000 1.438L11 11.938V20a1 1 0 002 0v-8.062l7.78-3.219a1 1 0 000-1.438L13 4.062V4a1 1 0 00-1-1z" />
+                          </svg>
+                        </div>
+
+                        <div className="flex gap-4 items-start relative z-10">
+                          <div className="w-10 h-10 rounded-full bg-blue-105/80 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 shadow-xs">
+                            <GraduationCap className="w-5 h-5" />
+                          </div>
+                          <div className="space-y-1.5 flex-1">
+                            <div className="flex justify-between items-start gap-4 flex-wrap">
+                              <h4 className="font-extrabold text-[#1E293B] dark:text-slate-100 text-sm tracking-tight leading-none">
+                                Bachelor of Technology
+                              </h4>
+                              <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-blue-105 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+                                2022 – 2026
+                              </span>
+                            </div>
+                            <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                              Computer Science & Engineering
+                            </p>
+                            <p className="text-[11px] font-medium text-slate-400 dark:text-slate-500">
+                              Rajiv Gandhi University of Knowledge Technologies – Basar
+                            </p>
+                            
+                            <div className="pt-2 flex items-center gap-1.5">
+                              <span className="text-[10px] font-bold text-slate-400">CGPA:</span>
+                              <span className="text-xs font-extrabold text-blue-600 dark:text-blue-400 bg-blue-100/30 dark:bg-blue-900/20 px-2 py-0.5 rounded">
+                                8.54
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+
+                      {/* Pre Uni Card */}
+                      <motion.div 
+                        whileHover={{ x: 4, scale: 1.01 }}
+                        className="bg-purple-50/40 dark:bg-purple-950/5 rounded-2xl border border-purple-100/50 dark:border-purple-900/10 p-5 relative overflow-hidden group transition-all shadow-sm"
+                      >
+                        {/* Decorative background shape */}
+                        <div className="absolute right-[-20px] bottom-[-20px] w-32 h-32 opacity-5 dark:opacity-[0.02] text-purple-500 pointer-events-none">
+                          <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                            <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm1 14h-2v-4h2zm0-6h-2V7h2z" />
+                          </svg>
+                        </div>
+
+                        <div className="flex gap-4 items-start relative z-10">
+                          <div className="w-10 h-10 rounded-full bg-purple-105/80 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center shrink-0 shadow-xs">
+                            <Award className="w-5 h-5" />
+                          </div>
+                          <div className="space-y-1.5 flex-1">
+                            <div className="flex justify-between items-start gap-4 flex-wrap">
+                              <h4 className="font-extrabold text-[#1E293B] dark:text-slate-100 text-sm tracking-tight leading-none">
+                                Pre University Course
+                              </h4>
+                              <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-purple-105 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
+                                2020 – 2022
+                              </span>
+                            </div>
+                            <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                              RGUKT Basar
+                            </p>
+                            
+                            <div className="pt-2 flex items-center gap-1.5">
+                              <span className="text-[10px] font-bold text-slate-400">CGPA:</span>
+                              <span className="text-xs font-extrabold text-purple-600 dark:text-purple-400 bg-purple-100/30 dark:bg-purple-900/20 px-2 py-0.5 rounded">
+                                8.9
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+
+                      {/* Secondary School Card */}
+                      <motion.div 
+                        whileHover={{ x: 4, scale: 1.01 }}
+                        className="bg-emerald-50/40 dark:bg-emerald-950/5 rounded-2xl border border-emerald-100/50 dark:border-emerald-900/10 p-5 relative overflow-hidden group transition-all shadow-sm"
+                      >
+                        {/* Decorative background shape */}
+                        <div className="absolute right-[-20px] bottom-[-20px] w-32 h-32 opacity-5 dark:opacity-[0.02] text-emerald-500 pointer-events-none">
+                          <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2zm0-8h-2V7h2z" />
+                          </svg>
+                        </div>
+
+                        <div className="flex gap-4 items-start relative z-10">
+                          <div className="w-10 h-10 rounded-full bg-emerald-110/80 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 shadow-xs">
+                            <Trophy className="w-5 h-5" />
+                          </div>
+                          <div className="space-y-1.5 flex-1">
+                            <div className="flex justify-between items-start gap-4 flex-wrap">
+                              <h4 className="font-extrabold text-[#1E293B] dark:text-slate-100 text-sm tracking-tight leading-none">
+                                Secondary School
+                              </h4>
+                              <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-emerald-110 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+                                2020
+                              </span>
+                            </div>
+                            <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                              T.S. Model School
+                            </p>
+                            
+                            <div className="pt-2 flex items-center gap-1.5">
+                              <span className="text-[10px] font-bold text-slate-400">CGPA:</span>
+                              <span className="text-xs font-extrabold text-emerald-600 dark:text-emerald-400 bg-emerald-100/30 dark:bg-emerald-900/20 px-2 py-0.5 rounded">
+                                10.0
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tech Skills Pills Row at Bottom of About Me */}
+                <div className="mt-12 pt-8 border-t border-gray-100 dark:border-purple-950/20">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-4 text-center">
+                    CORE SCIENTIFIC TOOLKITS & SKILLSET
+                  </span>
+                  <div className="flex flex-wrap justify-center gap-2.5 max-w-4xl mx-auto">
+                    {[
+                      { name: 'Python', color: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-300/30' },
+                      { name: 'SQL', color: 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-300/30' },
+                      { name: 'Pandas', color: 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-300/30' },
+                      { name: 'NumPy', color: 'bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-300/30' },
+                      { name: 'Scikit-learn', color: 'bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-300/30' },
+                      { name: 'TensorFlow', color: 'bg-red-500/10 text-red-600 dark:text-red-400 border-red-300/30' },
+                      { name: 'Matplotlib', color: 'bg-teal-500/10 text-teal-600 dark:text-teal-400 border-teal-300/30' },
+                      { name: 'Seaborn', color: 'bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-300/30' },
+                      { name: 'Streamlit', color: 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-300/30' },
+                      { name: 'Jupyter', color: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-300/30' },
+                      { name: 'ChatGPT / LLMs', color: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-300/30' }
+                    ].map((pill, idx) => (
+                      <motion.span
+                        key={pill.name}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.04 }}
+                        whileHover={{ scale: 1.05 }}
+                        className={`px-3 py-1.5 rounded-full border text-xs font-semibold ${pill.color} shadow-xs select-none cursor-default transition-all duration-300`}
+                      >
+                        {pill.name}
+                      </motion.span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </motion.section>
 

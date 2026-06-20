@@ -25,6 +25,7 @@ export default function Navbar({ onNavigate, activeSection, onOpenResume, isProj
 
   const navLinks = [
     { label: 'Home', id: 'home' },
+    { label: 'About', id: 'about' },
     { label: 'Skills', id: 'skills' },
     { label: 'Projects', id: 'projects' },
     { label: 'Experience', id: 'experience' },
